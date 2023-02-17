@@ -1,0 +1,21 @@
+.menu {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+
+    button {
+        width: 300px;
+        height: 80px;
+        cursor: pointer;
+        border-radius: 40px;
+        border: none;
+        box-shadow: 2px 3px 4px 4px rgba($color: #000, $alpha: 0.2);
+        font-size: 26px;
+        background-color: #c8ee7c;
+        color: #1f2f01;
+    }
+
+}

@@ -1,0 +1,191 @@
+.sapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.game {
+    box-shadow: 1px 5px 8px 4px rgba($color: #000000, $alpha: 0.3);
+
+    &__header {
+        width: 100%;
+        height: 60px;
+        background-color: #4A752C;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .mines {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &__count  {
+                    margin-left: 10px;
+                    color: white;
+                    font-size: 2em;
+                }
+        }
+
+        .timer {
+            height: 100%;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .seconds {
+                margin-left: 10px;
+                color: white;
+                font-size: 2em;
+            }
+        }
+
+        .restart {
+            transition: transform .4s;
+            cursor: pointer;
+
+            &.click-me {
+                animation: click-me 1s infinite cubic-bezier(0.23, 1, 0.320, 1);
+            }
+
+            &:hover {
+                transform: rotate(360deg);
+            }
+        }
+
+    }
+}
+
+.table {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .game-end {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: #000000, $alpha: 0.2);
+
+        &__text {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            white-space: nowrap;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+
+            font-size: 5vw;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 2px #000;
+        }
+    }
+
+    &__row {
+        display: flex;
+
+        &__field {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+
+            background-color: #AAD751;
+            font-size: 150%;
+            font-weight: bold;
+
+            &:hover {
+                background-color: #BFE17D;
+            }
+
+            &.dark {
+                background-color: #A2D149;
+
+                &:hover {
+                    background-color: #BFE17D;
+                }
+            }
+
+            &.opened {
+                background-color: #E5C29F;
+
+                &:hover {
+                    background-color: #ECD1B7;
+                }
+
+                &.dark {
+                    background-color: #D7B899;
+
+                    &:hover {
+                        background-color: #ECD1B7;
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+.flag,
+.mine {
+    height: 70%;
+}
+
+.clock {
+    height: 70%;
+}
+
+
+.one {
+    color: #1976D2;
+}
+
+.two {
+    color: green;
+}
+
+.three {
+    color: red;
+}
+
+.four {
+    color: darkblue;
+}
+
+.five {
+    color: brown;
+}
+
+.six {
+    color: teal;
+}
+
+.seven {
+    color: black;
+}
+
+.eight {
+    color: white;
+}
+
+@keyframes click-me {
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
